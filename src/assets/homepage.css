@@ -1,0 +1,191 @@
+/* HomePage.css - Updated navbar styles */
+html {
+  scroll-behavior: smooth;
+}
+
+.home-container {
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Space for footer */
+}
+
+.home-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/liquidAbstract.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Center the navbar */
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  background-color: rgba(245, 245, 245, 0.8); /* Lighter background */
+  position: fixed;
+  top: 1.5rem; /* Add some space from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center trick */
+  width: auto; /* No longer full width */
+  max-width: 90%;
+  z-index: 100;
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Navbar changes on scroll */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Slightly closer together */
+  padding: 0 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* Add horizontal padding */
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.95rem;
+  border-radius: 25px;
+}
+
+/* Make the active link have a background */
+.nav-links a.active {
+  color: #fff;
+  background-color: #915a98;
+  border-radius: 25px;
+}
+
+/* Remove the underline for active links */
+.nav-links a.active::after {
+  content: none;
+}
+
+.nav-links a:hover {
+  color: #da7bf0;
+}
+
+/* Non-active links hover effect */
+.nav-links a:not(.active):hover {
+  background-color: rgba(178, 196, 214, 0.1);
+  border-radius: 25px;
+}
+
+/* Hero section - adjusted padding for the new navbar */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  padding-top: 10rem; /* Adjusted for navbar */
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  color: white;
+  min-height: 55vh;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Content sections */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  scroll-margin-top: 100px; /* Adjusted for the new navbar */
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #0066cc;
+  padding-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    top: 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .hero-section {
+    padding-top: 8rem;
+  }
+
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .content-section {
+    padding: 1rem;
+  }
+}

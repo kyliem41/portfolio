@@ -1,4 +1,4 @@
-import '../assets/HomePage.css';
+import '../assets/homepage.css';
 import { ScrollLink } from './scrolling';
 import React, { useEffect, useState } from 'react';
 

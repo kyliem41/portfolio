@@ -1,0 +1,166 @@
+/* Timeline container */
+.timeline-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 10px;
+  }
+  
+  /* The vertical line */
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #915a98;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+  }
+  
+  /* Timeline items */
+  .timeline-item {
+    position: relative;
+    margin-bottom: 100px;
+    min-height: 200px;
+  }
+  
+  /* Timeline content */
+  .timeline-content {
+    position: relative;
+    width: 40%;
+    padding: 25px;
+    background-color: rgba(234, 235, 241, 0.9);
+    border-radius: 25px;
+    border: rgba(86, 94, 167, 0.9) 4px solid;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  /* Position content boxes */
+  .timeline-left {
+    float: left;
+    text-align: left;
+  }
+  
+  .timeline-right {
+    float: right;
+    text-align: left;
+  }
+  
+  /* Clear floats */
+  .timeline-item::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  /* Timeline date circle */
+  .timeline-date-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    border: 4px solid #915a98;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Briefcase icon */
+  .icon-container {
+    margin-bottom: 5px;
+  }
+  
+  .briefcase-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+    color: #915a98;
+  }
+  
+  /* Date text */
+  .timeline-date-text {
+    position: relative;
+    right: .25rem;
+    width: auto;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    top: 40px;
+  }
+  
+  /* Position date text */
+  .timeline-left + .timeline-date-text {
+    left: calc(50% + 50px);
+  }
+  
+  .timeline-right + .timeline-date-text {
+    right: calc(50% + 50px);
+  }
+  
+  /* Job role and company */
+  .timeline-role {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #333;
+  }
+  
+  .timeline-company {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #915a98;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Description text */
+  .timeline-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .timeline-description p {
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 900px) {
+    .timeline-container::before {
+      left: 60px;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 120px);
+      float: right;
+      margin-left: 120px;
+    }
+    
+    .timeline-date-circle {
+      left: 60px;
+      transform: none;
+    }
+    
+    .timeline-date-text {
+      left: 60px;
+      top: 110px;
+      right: auto;
+      width: auto;
+    }
+    
+    .timeline-left,
+    .timeline-right {
+      float: right;
+      text-align: left;
+    }
+  }

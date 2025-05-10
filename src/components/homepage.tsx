@@ -5,6 +5,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFileDownload } from "react-icons/fa";
 import resumePDF from '../assets/Rhodus,K_Resume.pdf';
+import ExperienceSection from './experience';
+import ContactSection from './contactMe';
 
 const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -155,11 +157,7 @@ const HomePage: React.FC = () => {
       
       <div className="content-section">
         
-        <section id="experience">
-          <h2>Experience</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Aenean et justo at enim posuere facilisis.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
-        </section>
+        <ExperienceSection />
 
         <section id="skills">
           <h2>Skills</h2>
@@ -173,13 +171,7 @@ const HomePage: React.FC = () => {
           <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
         </section>
 
-        <section id="contact">
-          <h2>Contact Me</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Aenean et justo at enim posuere facilisis.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Aenean et justo at enim posuere facilisis.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
-        </section>
+        <ContactSection />
       </div>
       
       {/* <footer>

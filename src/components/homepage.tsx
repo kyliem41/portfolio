@@ -1,6 +1,10 @@
 import '../assets/homepage.css';
 import { ScrollLink } from './scrolling';
 import React, { useEffect, useState } from 'react';
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
+import resumePDF from '../assets/Rhodus,K_Resume.pdf';
 
 const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -122,8 +126,31 @@ const HomePage: React.FC = () => {
       </div>
       
       <div className="hero-section" id="home">
+        <div className='hero-content'>
         <h1>Hello, I'm Kylie Rhodus!</h1>
         <p className="subtitle">Software Developer and Cloud Engineer</p>
+
+      <div className='ref-links'>
+        <button className='github'>
+          <a href="https://github.com/kyliem41" target='_blank' rel='noopener noreferrer'>
+            GitHub
+            <FaGithub className="button-icon" />
+          </a>
+        </button>
+        <button className='linkedin'>
+          <a href="https://www.linkedin.com/in/kylie-rhodus/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+            <FaLinkedinIn className="button-icon" />
+          </a>
+        </button>
+        <button className='resume'>
+          <a href={resumePDF} download="Kylie_Rhodus_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume
+            <FaFileDownload className="button-icon" />
+          </a>
+        </button>
+      </div>
+      </div>
       </div>
       
       <div className="content-section">

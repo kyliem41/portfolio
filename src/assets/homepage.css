@@ -93,28 +93,40 @@ html {
   border-radius: 25px;
 }
 
-/* Hero section - adjusted padding for the new navbar */
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 8rem 2rem;
-  padding-top: 10rem; /* Adjusted for navbar */
+  /* padding: 8rem 2rem; */
+  padding: 0 2rem;
+  /* padding-top: 10rem; */
   /* background-color: rgba(0, 0, 0, 0.4); */
   color: white;
-  min-height: 55vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 4rem; /* Space for the navbar */
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Content sections */
@@ -134,12 +146,39 @@ section {
   scroll-margin-top: 100px; /* Adjusted for the new navbar */
 }
 
+section:first-of-type {
+  margin-top: 2rem;
+}
+
 section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #333;
   border-bottom: 2px solid #0066cc;
   padding-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .ref-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ref-links button a {
+    width: 200px;
+    justify-content: space-between;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 /* Footer */
@@ -187,5 +226,87 @@ footer {
   
   .content-section {
     padding: 1rem;
+  }
+}
+
+/* buttons */
+.ref-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.ref-links button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ref-links button a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+/* GitHub button */
+.github a {
+  /* background-color: #333; */
+  background-color: #da7bf0;
+}
+
+.github a:hover {
+  /* background-color: #24292e; */
+  background-color: #915a98;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* LinkedIn button */
+.linkedin a {
+  background-color: #da7bf0;
+}
+
+.linkedin a:hover {
+  background-color: #915a98;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Resume button */
+.resume a {
+  background-color: #da7bf0;
+}
+
+.resume a:hover {
+  background-color: #915a98;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon styling */
+.button-icon {
+  font-size: 1.2rem;
+  margin-left: 0.25rem; /* Ensures a bit of space between text and icon */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ref-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ref-links button a {
+    width: 200px; /* Fixed width for mobile */
+    justify-content: space-between; /* Text on left, icon on right */
+    padding: 0.6rem 1.2rem;
   }
 }

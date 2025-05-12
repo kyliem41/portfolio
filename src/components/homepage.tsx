@@ -7,6 +7,7 @@ import { FaFileDownload } from "react-icons/fa";
 import resumePDF from '../assets/Rhodus,K_Resume.pdf';
 import ExperienceSection from './experience';
 import ContactSection from './contactMe';
+// import SkillsSection from './skills';
 
 const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -159,11 +160,7 @@ const HomePage: React.FC = () => {
         
         <ExperienceSection />
 
-        <section id="skills">
-          <h2>Skills</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Aenean et justo at enim posuere facilisis.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
-        </section>
+        {/* <SkillsSection /> */}
         
         <section id="projects">
           <h2>Projects</h2>
@@ -173,10 +170,6 @@ const HomePage: React.FC = () => {
 
         <ContactSection />
       </div>
-      
-      {/* <footer>
-        <p>&copy; 2025 Your Website. All Rights Reserved.</p>
-      </footer> */}
     </div>
   );
 };

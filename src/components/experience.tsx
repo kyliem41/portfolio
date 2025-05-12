@@ -11,11 +11,14 @@ const ExperienceSection: React.FC = () => {
         {/* First job - Right side */}
         <div className="timeline-item">
           <div className="timeline-content timeline-right">
-            <div className="timeline-role">Developer</div>
-            <div className="timeline-company">YouPay</div>
+            <div className="timeline-role">Cross-Platform Engineer</div>
+            <div className="timeline-company">Iamai-Core</div>
             <div className="timeline-description">
-              <p>Developed new features using Laravel, Vue.js, PHP, JavaScript, Tailwind CSS, MySQL and REST APIs.</p>
-              <p>Created an email notification system for merchants to receive weekly/monthly summaries of YouPay carts created, paid and cancelled. I also integrated YouPay into dozens of stores.</p>
+              <p>- Guaranteed seamless application compatibility across diverse platforms and devices.</p>
+              <p>- Expertly debugged and resolved complex cross-platform application issues.</p>
+              <p>- Maintained cutting-edge knowledge of evolving technology trends in cross-platform development.</p>
+              <p>- Customized an AI chatbot for enhanced user interaction and engagement.</p>
+              <p>- Automate and improve development and release processes.</p>
             </div>
           </div>
           
@@ -24,17 +27,17 @@ const ExperienceSection: React.FC = () => {
               <FaBriefcase className="briefcase-icon" />
             </div>
           </div>
-          <div className="timeline-date-text">February 2022 - November 2022</div>
+          <div className="timeline-date-text">March 2025 - Present</div>
         </div>
         
         {/* Second job - Left side */}
         <div className="timeline-item">
           <div className="timeline-content timeline-left">
-            <div className="timeline-role">Web Developer</div>
-            <div className="timeline-company">M3 Digital - Contract</div>
+            <div className="timeline-role">AI Software Engineer</div>
+            <div className="timeline-company">Source for Training</div>
             <div className="timeline-description">
-              <p>Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage, Francesca Jewellery and Salty Captain.</p>
-              <p>Developed high quality landing pages and front end features using HTML, CSS, SCSS, JavaScript and Liquid.</p>
+              <p>- Engineered an innovative AI-driven platform to optimize recruitment and admissions workflows for educational institutions.</p>
+              <p>- Leveraged cutting-edge technologies, including Python, AWS, PostgreSQL, React, and OpenAI, to deliver a robust product.</p>
             </div>
           </div>
           
@@ -43,17 +46,18 @@ const ExperienceSection: React.FC = () => {
               <FaBriefcase className="briefcase-icon" />
             </div>
           </div>
-          <div className="timeline-date-text">September 2021 - February 2022</div>
+          <div className="timeline-date-text">January 2025 - March 2025</div>
         </div>
         
         {/* Third job - Right side */}
         <div className="timeline-item">
           <div className="timeline-content timeline-right">
-            <div className="timeline-role">Junior Developer</div>
-            <div className="timeline-company">Example Company</div>
+            <div className="timeline-role">Full Stack Developer</div>
+            <div className="timeline-company">GearSwap - Neumont Senior Capstone Project</div>
             <div className="timeline-description">
-              <p>Assisted in developing and maintaining web applications.</p>
-              <p>Collaborated with senior developers on various projects. Fixed bugs and implemented minor features. Gained experience with React and Node.js.</p>
+              <p>- Developed an innovative online thrift shopping platform enabling user-driven buying and selling of pre-owned apparel.</p>
+              <p>- Integrated a bespoke AI Stylist feature, enhancing personalized shopping experiences.</p>
+              <p>- Utilized cutting-edge technologies including Python, AWS, PostgreSQL, Flutter, OpenAI, and Docker.</p>
             </div>
           </div>
           
@@ -62,7 +66,7 @@ const ExperienceSection: React.FC = () => {
               <FaBriefcase className="briefcase-icon" />
             </div>
           </div>
-          <div className="timeline-date-text">January 2021 - August 2021</div>
+          <div className="timeline-date-text">September 2024 - December 2024</div>
         </div>
       </div>
     </section>

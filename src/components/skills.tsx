@@ -1,5 +1,5 @@
-import React from 'react';
-import '../assets/skills.css';
+// import React from 'react';
+// import '../assets/skills.css';
 
 // S K I L L S
 // Proficient

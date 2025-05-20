@@ -12,7 +12,7 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
-    color: #333;
+    color: #ede2e2;
   }
   
   .email-link {
@@ -75,6 +75,17 @@
     resize: vertical;
     min-height: 150px;
   }
+
+  input.form-input {
+  height: 25px; /* Adjust this value to your preference */
+  min-height: unset;
+  resize: none;
+  }
+
+  textarea.form-input {
+  resize: vertical;
+  min-height: 150px;
+  }
   
   /* Submit button */
   .submit-button {
@@ -83,6 +94,7 @@
     justify-content: center;
     gap: 0.5rem;
     width: auto;
+    align-self: flex-end;
     margin-left: auto; /* Right align the button */
     padding: 0.8rem 1.8rem;
     font-size: 1rem;

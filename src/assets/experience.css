@@ -29,6 +29,7 @@
   /* Timeline content */
   .timeline-content {
     position: relative;
+    color: #333;
     width: 40%;
     padding: 25px;
     background-color: rgba(234, 235, 241, 0.9);
@@ -95,7 +96,7 @@
     white-space: nowrap;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #333;
+    color: white;
     top: 40px;
   }
   

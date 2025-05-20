@@ -136,7 +136,7 @@ html {
   padding: 2rem;
 }
 
-section {
+/* section {
   margin-bottom: 4rem;
   background-color: rgba(234, 235, 241, 0.9);
   padding: 2rem;
@@ -145,6 +145,30 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   color: #333;
   scroll-margin-top: 100px; /* Adjusted for the new navbar */
+/* } */
+
+section:not(#contact) {
+  margin-bottom: 4rem;
+  /* background-color: rgba(234, 235, 241, 0.9); */
+  padding: 2rem;
+  /* border-radius: 25px; */
+  /* border: rgba(86, 94, 167, 0.9) 8px solid; */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  color: white;
+  scroll-margin-top: 100px; /* Adjusted for the new navbar */
+}
+
+#contact {
+  margin-bottom: 4rem;
+  color: white;
+  padding: 2rem; /* maybe change padding */
+  scroll-margin-top: 100px;
+}
+
+#contact h2 {
+  color: white;
+  border-bottom: 2px solid #da7bf0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 section:first-of-type {
@@ -154,8 +178,8 @@ section:first-of-type {
 section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #333;
-  border-bottom: 2px solid #0066cc;
+  color: white;
+  border-bottom: 2px solid #da7bf0;
   padding-bottom: 0.5rem;
 }
 

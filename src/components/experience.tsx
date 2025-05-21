@@ -17,8 +17,6 @@ const ExperienceSection: React.FC = () => {
                 <li><span>Guaranteed seamless application compatibility across diverse platforms and devices.</span></li>
                 <li><span>Expertly debugged and resolved complex cross-platform application issues.</span></li>
                 <li><span>Maintained cutting-edge knowledge of evolving technology trends in cross-platform development.</span></li>
-                <li><span>Customized an AI chatbot for enhanced user interaction and engagement.</span></li>
-                <li><span>Automate and improve development and release processes.</span></li>
               </ul>
             </div>
           </div>

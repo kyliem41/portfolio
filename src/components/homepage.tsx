@@ -8,6 +8,7 @@ import resumePDF from '../assets/Rhodus,K_Resume.pdf';
 import ExperienceSection from './experience';
 import ProjectSection from './projects';
 import ContactSection from './contactMe';
+import profileImage from '../assets/kylie.jpg';
 
 const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -121,39 +122,47 @@ const HomePage: React.FC = () => {
       </div>
       
       <div className="hero-section" id="home">
-        <div className='hero-content'>
-        <h1>Hello, I'm Kylie Rhodus!</h1>
-        <p className="subtitle">Software Developer and Cloud Engineer</p>
+        <div className="hero-container">
+          <div className="hero-image">
+            {/* Add your image here */}
+            <img src={profileImage} alt="Kylie Rhodus" />
+          </div>
+          
+          <div className='hero-content'>
+            <h1>Hello, I'm Kylie Rhodus!</h1>
+            <p className="subtitle">Software Developer and Cloud Engineer</p>
+            
+            <div className="hero-bio">
+              <p>I'm passionate about creating elegant solutions to complex problems. With expertise in full-stack development and cloud engineering, I build scalable, user-friendly applications that deliver real value.</p>
+            </div>
 
-      <div className='ref-links'>
-        <button className='github'>
-          <a href="https://github.com/kyliem41" target='_blank' rel='noopener noreferrer'>
-            GitHub
-            <FaGithub className="button-icon" />
-          </a>
-        </button>
-        <button className='linkedin'>
-          <a href="https://www.linkedin.com/in/kylie-rhodus/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-            <FaLinkedinIn className="button-icon" />
-          </a>
-        </button>
-        <button className='resume'>
-          <a href={resumePDF} download="Kylie_Rhodus_Resume.pdf" target="_blank" rel="noopener noreferrer">
-            Resume
-            <FaFileDownload className="button-icon" />
-          </a>
-        </button>
-      </div>
-      </div>
+            <div className='ref-links'>
+              <button className='github'>
+                <a href="https://github.com/kyliem41" target='_blank' rel='noopener noreferrer'>
+                  GitHub
+                  <FaGithub className="button-icon" />
+                </a>
+              </button>
+              <button className='linkedin'>
+                <a href="https://www.linkedin.com/in/kylie-rhodus/" target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                  <FaLinkedinIn className="button-icon" />
+                </a>
+              </button>
+              <button className='resume'>
+                <a href={resumePDF} download="Kylie_Rhodus_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Resume
+                  <FaFileDownload className="button-icon" />
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       
       <div className="content-section">
-        
         <ExperienceSection />
-        
         <ProjectSection />
-
         <ContactSection />
       </div>
     </div>

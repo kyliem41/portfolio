@@ -6,8 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaFileDownload } from "react-icons/fa";
 import resumePDF from '../assets/Rhodus,K_Resume.pdf';
 import ExperienceSection from './experience';
+import ProjectSection from './projects';
 import ContactSection from './contactMe';
-// import SkillsSection from './skills';
 
 const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
         const homeSectionTop = homeSection.offsetTop;
         const homeSectionBottom = homeSectionTop + homeSection.offsetHeight;
         
-        // If we're at the top of the page or within the home section
+        //top of the page or home section
         if (window.scrollY < 100 || (window.scrollY >= homeSectionTop - 150 && window.scrollY < homeSectionBottom - 200)) {
           setActiveSection('home');
           updateActiveClass('home');
@@ -55,7 +55,6 @@ const HomePage: React.FC = () => {
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id') || '';
         
-        // When we're close to the top of a section (with some buffer for the navbar)
         if (window.scrollY >= sectionTop - 150 && window.scrollY < sectionTop + sectionHeight - 150) {
           current = sectionId;
         }
@@ -106,13 +105,6 @@ const HomePage: React.FC = () => {
           </ScrollLink>
 
           <ScrollLink 
-            to="#skills" 
-            className={activeSection === 'skills' ? 'active' : ''}
-          >
-            Skills
-          </ScrollLink>
-
-          <ScrollLink 
             to="#projects" 
             className={activeSection === 'projects' ? 'active' : ''}
           >
@@ -159,14 +151,8 @@ const HomePage: React.FC = () => {
       <div className="content-section">
         
         <ExperienceSection />
-
-        {/* <SkillsSection /> */}
         
-        <section id="projects">
-          <h2>Projects</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Aenean et justo at enim posuere facilisis.</p>
-          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.</p>
-        </section>
+        <ProjectSection />
 
         <ContactSection />
       </div>

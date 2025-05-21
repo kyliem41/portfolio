@@ -32,22 +32,25 @@
     color: #333;
     width: 40%;
     padding: 25px;
-    background-color: rgba(234, 235, 241, 0.9);
+    background-color: rgb(255, 255, 255);
     border-radius: 25px;
     border: rgba(86, 94, 167, 0.9) 4px solid;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    margin-top: 20px;
   }
   
   /* Position content boxes */
   .timeline-left {
     float: left;
     text-align: left;
+    margin-right: 150px;
   }
   
   .timeline-right {
     float: right;
     text-align: left;
+    margin-left: 150px;
   }
   
   /* Clear floats */
@@ -87,53 +90,121 @@
     margin: 0 auto;
     color: #915a98;
   }
+
+  .date-container {
+  position: absolute;
+  top: 38px;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  }
   
-  /* Date text */
+  .date-container01 {
+  position: absolute;
+  top: 36px;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.date-container .timeline-company,
+.date-container01 .timeline-company {
+  position: relative;
+  color: #da7bf0;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: 0;
+  text-align: center;
+  }
+
   .timeline-date-text {
-    position: relative;
-    right: .25rem;
-    width: auto;
-    white-space: nowrap;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: white;
-    top: 40px;
+  position: relative;
+  white-space: nowrap;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 5px;
   }
   
-  /* Position date text */
-  .timeline-left + .timeline-date-text {
-    left: calc(50% + 50px);
+  .timeline-left + .timeline-date-circle + .date-container {
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 610px
   }
+
+.timeline-right + .timeline-date-circle + .date-container01,
+.timeline-right + .timeline-date-circle + .date-container {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.timeline-right + .timeline-date-circle + .date-container01 {
+  padding-left: 280px;
+}
+
+.timeline-right + .timeline-date-circle + .date-container {
+  padding-left: 170px;
+}
+
+.timeline-left + .timeline-date-circle + .date-container .timeline-date-text,
+.timeline-right + .timeline-date-circle + .date-container01 .timeline-date-text,
+.timeline-right + .timeline-date-circle + .date-container .timeline-date-text {
+  left: auto;
+  right: auto;
+}
   
-  .timeline-right + .timeline-date-text {
-    right: calc(50% + 50px);
+/* Job role and company */
+.timeline-role {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #915a98;
+}
+
+/* change this */
+.timeline-company {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+/* Description text */
+.timeline-description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: black;
+}
+
+.timeline-description ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
   }
-  
-  /* Job role and company */
-  .timeline-role {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-    color: #333;
+
+.timeline-description li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  padding: 0;
+  vertical-align: top;
   }
-  
-  .timeline-company {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #915a98;
-    margin-bottom: 1.2rem;
+
+  .timeline-description li::marker {
+    vertical-align: middle;
   }
-  
-  /* Description text */
-  .timeline-description {
-    margin-top: 1rem;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .timeline-description p {
-    margin-bottom: 0.8rem;
-  }
+
+.timeline-description li span {
+    display: inline-block;
+    vertical-align: top;
+}
   
   /* Responsive styles */
   @media screen and (max-width: 900px) {
@@ -159,9 +230,14 @@
       width: auto;
     }
     
-    .timeline-left,
-    .timeline-right {
-      float: right;
-      text-align: left;
+    .timeline-left + .timeline-date-circle + .date-container,
+    .timeline-right + .timeline-date-circle + .date-container {
+      justify-content: flex-start;
+    }
+  
+    .timeline-left + .timeline-date-circle + .date-container .timeline-date-text,
+    .timeline-right + .timeline-date-circle + .date-container .timeline-date-text {
+      left: 130px; /* Adjust as needed for mobile */
+      right: auto;
     }
   }

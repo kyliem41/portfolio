@@ -190,6 +190,7 @@
       padding: 0.7rem 1.5rem;
       font-size: 0.9rem;
       border-radius: 20px;
+      width: 60%;
     }
     
     .success-message,

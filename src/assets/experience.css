@@ -242,75 +242,173 @@
     }
   }
 
-  /* Phone screen styles */
   @media screen and (max-width: 480px) {
-    .timeline-container {
-      padding: 10px 0;
-    }
-    
-    .timeline-container::before {
-      left: 30px;
-    }
-    
-    .timeline-content {
-      width: calc(100% - 60px);
-      margin-left: 60px;
-      padding: 15px;
-      min-height: auto;
-    }
-    
-    .timeline-item {
-      margin-bottom: 60px;
-      min-height: 150px;
-    }
-    
-    .timeline-date-circle {
-      left: 30px;
-      width: 50px;
-      height: 50px;
-    }
-    
-    .briefcase-icon {
-      width: 20px;
-      height: 20px;
-    }
-    
-    .timeline-role {
-      font-size: 1.2rem;
-    }
-    
-    .timeline-company {
-      font-size: 1rem;
-    }
-    
-    .timeline-description {
-      font-size: 0.9rem;
-    }
-    
-    .timeline-description li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .date-container,
-    .date-container01 {
-      top: 30px;
-    }
-    
-    .timeline-left + .timeline-date-circle + .date-container .timeline-date-text,
-    .timeline-right + .timeline-date-circle + .date-container .timeline-date-text,
-    .timeline-right + .timeline-date-circle + .date-container01 .timeline-date-text {
-      left: 90px;
-      font-size: 1rem;
-    }
-    
-    .timeline-left + .timeline-date-circle + .date-container,
-    .timeline-right + .timeline-date-circle + .date-container,
-    .timeline-right + .timeline-date-circle + .date-container01 {
-      padding-left: 0;
-    }
-    
-    .date-container .timeline-company,
-    .date-container01 .timeline-company {
-      font-size: 0.9rem;
-    }
+  #experience {
+    padding: 2rem 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
+
+  .timeline-container {
+    position: static;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* Remove timeline line on mobile */
+  .timeline-container::before {
+    display: none;
+  }
+  
+  .timeline-item {
+    position: static;
+    margin-bottom: 2rem;
+    min-height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Remove timeline positioning and make cards */
+  .timeline-content {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    float: none;
+    margin: 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #da7bf0 0%, #360741 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Remove left/right classes effect on mobile */
+  .timeline-left,
+  .timeline-right {
+    float: none;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+  }
+  
+  /* Hide circle on mobile */
+  .timeline-date-circle {
+    display: none;
+  }
+  
+  /* Redesign date container for card header */
+  .date-container,
+  .date-container01 {
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+  }
+  
+  .timeline-date-text {
+    position: static;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+  }
+  
+  .date-container .timeline-company,
+  .date-container01 .timeline-company {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    white-space: normal;
+    text-align: left;
+  }
+  
+  .timeline-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-top: 0;
+  }
+  
+  .timeline-description ul {
+    padding-left: 1.2rem;
+  }
+  
+  .timeline-description li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+  
+  .timeline-description li span {
+    color: #ffffff;
+  }
+
+  /* Clear any floats */
+  .timeline-item::after {
+    display: none;
+  }
+
+  /* Ensure no horizontal overflow */
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 320px) {
+  #experience {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  .timeline-role {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-date-text {
+    font-size: 0.9rem;
+  }
+  
+  .date-container .timeline-company,
+  .date-container01 .timeline-company {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+}

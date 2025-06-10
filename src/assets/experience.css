@@ -321,7 +321,9 @@
   }
   
   /* Hide circle and date containers on mobile */
-  .timeline-date-circle {
+  .timeline-date-circle,
+  .date-container,
+  .date-container01 {
     display: none;
   }
   

@@ -208,40 +208,41 @@
   
   /* Responsive styles */
   @media screen and (max-width: 900px) {
-    .timeline-container::before {
-      left: 60px;
-    }
-    
-    .timeline-content {
-      width: calc(100% - 120px);
-      float: right;
-      margin-left: 120px;
-    }
-    
-    .timeline-date-circle {
-      left: 60px;
-      transform: none;
-    }
-    
-    .timeline-date-text {
-      left: 60px;
-      top: 110px;
-      right: auto;
-      width: auto;
-    }
-    
-    .timeline-left + .timeline-date-circle + .date-container,
-    .timeline-right + .timeline-date-circle + .date-container {
-      justify-content: flex-start;
-    }
+  .timeline-container::before {
+    left: 60px;
+  }
   
-    .timeline-left + .timeline-date-circle + .date-container .timeline-date-text,
-    .timeline-right + .timeline-date-circle + .date-container .timeline-date-text {
-      left: 130px; /* Adjust as needed for mobile */
-      right: auto;
-    }
+  .timeline-content {
+    width: calc(100% - 120px);
+    float: right;
+    margin-left: 120px;
+  }
+  
+  .timeline-date-circle {
+    left: 60px;
+    transform: none;
+  }
+  
+  .timeline-date-text {
+    left: 60px;
+    top: 110px;
+    right: auto;
+    width: auto;
+  }
+  
+  .timeline-left + .timeline-date-circle + .date-container,
+  .timeline-right + .timeline-date-circle + .date-container {
+    justify-content: flex-start;
   }
 
+  .timeline-left + .timeline-date-circle + .date-container .timeline-date-text,
+  .timeline-right + .timeline-date-circle + .date-container .timeline-date-text {
+    left: 130px;
+    right: auto;
+  }
+}
+
+/* Phone screen styles - Card Layout */
   @media screen and (max-width: 480px) {
   #experience {
     padding: 2rem 1rem;
@@ -254,6 +255,9 @@
     padding: 0;
     max-width: 100%;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
   
   /* Remove timeline line on mobile */
@@ -263,22 +267,22 @@
   
   .timeline-item {
     position: static;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     min-height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
   
-  /* Remove timeline positioning and make cards */
+  /* Make cards match projects section layout */
   .timeline-content {
     position: static;
     width: 100%;
     max-width: 100%;
     float: none;
     margin: 0;
-    padding: 1.5rem;
+    padding: 1.2rem;
     background-color: rgb(255, 255, 255);
     border: rgba(86, 94, 167, 0.9) 4px solid;
     border-radius: 25px;
@@ -287,12 +291,24 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    height: auto;
+    transform: translateY(0);
   }
 
   .timeline-content:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
     border-color: rgba(86, 94, 167, 1);
+  }
+
+  .timeline-content:active {
+    transform: translateY(-3px);
+    transition-duration: 0.1s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
   }
   
   /* Remove left/right classes effect on mobile */
@@ -304,41 +320,11 @@
     width: 100%;
   }
   
-  /* Hide circle on mobile */
-  .timeline-date-circle {
-    display: none;
-  }
-  
-  /* Redesign date container for above card */
+  /* Hide circle and date containers on mobile */
+  .timeline-date-circle,
   .date-container,
   .date-container01 {
-    position: static;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .timeline-date-text {
-    position: static;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #915a98;
-    margin-bottom: 0.5rem;
-    white-space: normal;
-  }
-  
-  .date-container .timeline-company,
-  .date-container01 .timeline-company {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #da7bf0;
-    margin-bottom: 0;
-    white-space: normal;
-    text-align: center;
+    display: none;
   }
   
   .timeline-role {
@@ -346,16 +332,33 @@
     font-weight: 700;
     margin-bottom: 1rem;
     color: #915a98;
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .timeline-role::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+    transform: translateX(-70%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(145, 90, 152, 0.3), transparent);
   }
   
   .timeline-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: black;
     margin-top: 0;
+    flex-grow: 1;
+    line-height: 1.6;
   }
   
   .timeline-description ul {
     padding-left: 1.2rem;
+    margin: 0;
   }
   
   .timeline-description li {
@@ -375,6 +378,24 @@
   /* Ensure no horizontal overflow */
   * {
     box-sizing: border-box;
+  }
+
+  /* Animation for cards entering viewport */
+  .timeline-content {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .timeline-item:nth-child(1) .timeline-content {
+    animation-delay: 0.1s;
+  }
+
+  .timeline-item:nth-child(2) .timeline-content {
+    animation-delay: 0.2s;
+  }
+
+  .timeline-item:nth-child(3) .timeline-content {
+    animation-delay: 0.3s;
   }
 }
 

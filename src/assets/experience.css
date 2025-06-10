@@ -320,28 +320,27 @@
     width: 100%;
   }
   
-  /* Hide circle and date containers on mobile - but show them as cards */
+  /* Hide circle and date containers on mobile */
   .timeline-date-circle {
     display: none;
   }
-  
+
   .date-container,
   .date-container01 {
     position: static;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin-bottom: 3rem;
+    text-align: left;
     background-color: rgb(255, 255, 255);
     border: rgba(86, 94, 167, 0.9) 2px solid;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
   }
-  
+
   .timeline-date-text {
     position: static;
     font-size: 0.9rem;
@@ -350,7 +349,7 @@
     margin-bottom: 0.25rem;
     white-space: normal;
   }
-  
+
   .date-container .timeline-company,
   .date-container01 .timeline-company {
     font-size: 0.85rem;
@@ -358,7 +357,7 @@
     color: #da7bf0;
     margin-bottom: 0;
     white-space: normal;
-    text-align: center;
+    text-align: left;
   }
   
   .timeline-role {

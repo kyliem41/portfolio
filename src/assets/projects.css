@@ -198,6 +198,61 @@
   }
 }
 
+/* Phone screen styles */
+@media (max-width: 480px) {
+  #projects {
+    padding: 2rem 1rem;
+  }
+
+  #projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+    min-height: 220px;
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-title::after {
+    width: 70%;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-technologies {
+    gap: 0.7rem;
+  }
+
+  .tech-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .tech-icon-svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Adjust animation for smaller screens */
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
 /* Keyboard focus styles */
 .project-card:focus {
   outline: 2px solid #ffffff;

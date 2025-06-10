@@ -328,7 +328,7 @@
   .date-container,
   .date-container01 {
     position: static;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
